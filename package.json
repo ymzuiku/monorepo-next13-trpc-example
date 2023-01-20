@@ -3,11 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "update:all": "pnpm -r --stream update --latest",
+    "update": "pnpm -r --stream update --latest",
     "dev": "pnpm -r --stream dev",
-    "dev:editor": "pnpm -C packages/editor dev",
+    "dev:client": "pnpm -C packages/client dev",
     "dev:server": "pnpm -C packages/server dev",
-    "i18n:all": "pnpm -r --stream i18n",
     "clear": "pnpm store prune && node-modules-rm",
     "test": "pnpm -r --stream test:run",
     "types": "tsc --noemit --skipLibCheck --incremental --tsBuildInfoFile './node_modules/.tsbuildinfo'",
