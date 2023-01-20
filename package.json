@@ -1,0 +1,48 @@
+{
+  "name": "amarkdown",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "update:all": "pnpm -r --stream update --latest",
+    "dev": "pnpm -r --stream dev",
+    "dev:editor": "pnpm -C packages/editor dev",
+    "dev:server": "pnpm -C packages/server dev",
+    "i18n:all": "pnpm -r --stream i18n",
+    "clear": "pnpm store prune && node-modules-rm",
+    "test": "pnpm -r --stream test:run",
+    "types": "tsc --noemit --skipLibCheck --incremental --tsBuildInfoFile './node_modules/.tsbuildinfo'",
+    "lint": "eslint --cache --fix **/*.{tsx,ts}",
+    "prepare": "husky install",
+    "format": "prettier  --write --loglevel=warn \"**/*.{ts,tsx,md}\"",
+    "ts": "npm run format && git add . && npm run types && npm run lint",
+    "tsw": "tsc-watch --noemit --skipLibCheck --incremental --tsBuildInfoFile './node_modules/.tsbuildinfo'",
+    "check": "npm run ts && npm run test"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@typescript-eslint/parser": "^5.44.0",
+    "@vitest/ui": "^0.25.3",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.2",
+    "link": "^1.5.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.8.0",
+    "terser": "^5.16.0",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.4"
+  },
+  "lint-staged": {
+    "./**/*": "prettier --write --ignore-unknown",
+    "./**/*.{tsx,ts}": "eslint --cache --fix"
+  },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=14.0.0"
+  },
+  "packageManager": "pnpm@6.32.4",
+  "dependencies": {
+    "bike": "^1.0.9"
+  }
+}
