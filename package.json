@@ -8,7 +8,7 @@
     "dev:client": "pnpm -C packages/client dev",
     "dev:shell": "pnpm -C packages/shell dev",
     "dev:server": "pnpm -C packages/server dev",
-    "clear": "pnpm store prune && node-modules-rm && node-modules-rm --dir .turbo && node-modules-rm --dir .next",
+    "clear": "pnpm store prune && node-modules-rm && node-modules-rm --dir .turbo && node-modules-rm --dir .next && node-modules-rm --dir .DS_Store",
     "test:all": "turbo test",
     "ts": "tsc --noemit --skipLibCheck --incremental --tsBuildInfoFile './node_modules/.tsbuildinfo'",
     "ts:watch": "tsc-watch --noemit --skipLibCheck --incremental --tsBuildInfoFile './node_modules/.tsbuildinfo'",
