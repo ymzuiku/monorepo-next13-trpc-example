@@ -1,13 +1,20 @@
+"use client";
 import { Inter } from "@next/font/google";
 import Image from "next/image";
+import { useState } from "react";
 import styles from "./page.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [num, setNum] = useState(0);
   return (
     <main className={styles.main}>
       <div className={styles.description}>
+        <button>num:{num}</button>
+        <button id="aaa" onClick={() => setNum(num + 1)}>
+          add num
+        </button>
         <p>
           Get started by editing&nbsp;
           <code className={styles.code}>app/page.tsx</code>

@@ -1,21 +1,21 @@
 {
-  "name": "example",
+  "name": "amarkdown",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "update": "pnpm -r --stream update --latest",
-    "dev": "pnpm -r --stream dev",
+    "dev:all": "turbo dev",
     "dev:client": "pnpm -C packages/client dev",
     "dev:server": "pnpm -C packages/server dev",
-    "clear": "pnpm store prune && node-modules-rm",
-    "test": "pnpm -r --stream test:run",
-    "types": "tsc --noemit --skipLibCheck --incremental --tsBuildInfoFile './node_modules/.tsbuildinfo'",
+    "clear": "pnpm store prune && node-modules-rm && && node-modules-rm --dir .turbo && node-modules-rm --dir .next",
+    "test:all": "turbo test",
+    "ts": "tsc --noemit --skipLibCheck --incremental --tsBuildInfoFile './node_modules/.tsbuildinfo'",
+    "ts:watch": "tsc-watch --noemit --skipLibCheck --incremental --tsBuildInfoFile './node_modules/.tsbuildinfo'",
     "lint": "eslint --cache --fix **/*.{tsx,ts}",
     "prepare": "husky install",
     "format": "prettier  --write --loglevel=warn \"**/*.{ts,tsx,md}\"",
-    "ts": "npm run format && git add . && npm run types && npm run lint",
-    "tsw": "tsc-watch --noemit --skipLibCheck --incremental --tsBuildInfoFile './node_modules/.tsbuildinfo'",
-    "check": "npm run ts && npm run test"
+    "check": "npm run format && git add . && npm run ts && npm run lint",
+    "precommit": "npm run check && turbo test:run"
   },
   "devDependencies": {
     "@types/node": "^18.11.9",

@@ -35,7 +35,7 @@ importers:
       tslib: 2.4.1
       typescript: 4.9.4
 
-  packages/editor:
+  packages/client:
     specifiers:
       '@next/font': 13.1.3
       '@tanstack/react-query': ^4.22.0
