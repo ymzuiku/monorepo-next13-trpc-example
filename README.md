@@ -5,7 +5,7 @@
 Start all:
 
 ```sh
-pnpm dev
+pnpm dev:all
 ```
 
 Start client
@@ -23,5 +23,5 @@ pnpm dev:server
 ## test
 
 ```sh
-pnpm test
+pnpm test:all
 ```
