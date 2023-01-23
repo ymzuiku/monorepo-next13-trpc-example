@@ -3,10 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "next": "next",
     "dev": "next dev",
     "dev2": "next dev --turbo",
     "build": "next build",
+    "export": "next build && next export",
     "start": "next start",
+    "tauri": "tauri",
+    "dev:tauri": "tauri dev",
+    "tauri:mac": "tauri build --target aarch64-apple-darwin",
+    "tauri:mac_x86": "tauri build --target x86_64-apple-darwin",
+    "tauri:win": "tauri build --target i686-pc-windows-msvcn",
     "lint": "next lint"
   },
   "dependencies": {
@@ -25,5 +32,9 @@
     "react-dom": "18.2.0",
     "server": "workspace:*",
     "typescript": "^4.9.4"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.2.3",
+    "internal-ip": "^7.0.0"
   }
 }

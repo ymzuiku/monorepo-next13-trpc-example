@@ -6,6 +6,8 @@
     "update": "pnpm -r --stream update --latest",
     "dev:all": "turbo dev",
     "dev:client": "pnpm -C packages/client dev",
+    "dev:tauri": "pnpm -C packages/client dev:tauri",
+    "win": "pnpm -C packages/client tauri:win",
     "dev:server": "pnpm -C packages/server dev",
     "clear": "pnpm store prune && node-modules-rm && && node-modules-rm --dir .turbo && node-modules-rm --dir .next",
     "test:all": "turbo test",
