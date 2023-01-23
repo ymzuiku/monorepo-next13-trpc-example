@@ -1,4 +1,4 @@
-# monorepo(pnpm+turbo) + next13 + trpc + vitest
+# monorepo(pnpm+turbo) + next13 + trpc + vitest + tauri
 
 ## Start
 

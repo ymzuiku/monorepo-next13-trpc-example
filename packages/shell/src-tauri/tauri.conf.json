@@ -4,7 +4,7 @@
     "beforeBuildCommand": "echo 'builded'",
     "beforeDevCommand": "npm run dev -- -h $HOST",
     "devPath": "http://127.0.0.1:3000",
-    "distDir": "../desktop"
+    "distDir": "../static"
   },
   "package": {
     "productName": "client",
