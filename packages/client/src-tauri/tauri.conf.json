@@ -29,7 +29,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.amarkdown.com",
+      "identifier": "com.example.com",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
