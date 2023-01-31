@@ -72,14 +72,6 @@ importers:
     devDependencies:
       internal-ip: 7.0.0
 
-  packages/desktop:
-    specifiers:
-      '@tauri-apps/cli': ^1.2.3
-      internal-ip: ^7.0.0
-    devDependencies:
-      '@tauri-apps/cli': 1.2.3
-      internal-ip: 7.0.0
-
   packages/server:
     specifiers:
       '@trpc/server': ^10.9.0
@@ -92,6 +84,12 @@ importers:
       zod: 3.20.2
     devDependencies:
       vitest: 0.27.2
+
+  packages/shell:
+    specifiers:
+      '@tauri-apps/cli': ^1.2.3
+    devDependencies:
+      '@tauri-apps/cli': 1.2.3
 
 packages:
 

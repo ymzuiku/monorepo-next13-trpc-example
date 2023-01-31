@@ -1,10 +1,5 @@
 const isProd = process.env.NODE_ENV === "production";
 module.exports = async (phase, { defaultConfig }) => {
-  let internalHost = null;
-  if (!isProd) {
-    const { internalIpV4 } = await import("internal-ip");
-    internalHost = await internalIpV4();
-  }
   /**
    * @type {import('next').NextConfig}
    */
@@ -19,12 +14,12 @@ module.exports = async (phase, { defaultConfig }) => {
     images: {
       unoptimized: true,
     },
-    // assetPrefix: isProd ? null : `http://${internalHost}:3000`,
+    assetPrefix: isProd ? null : `http://127.0.0.1:3000`,
     async rewrites() {
       return [
         {
           source: "/v1/:path*",
-          destination: `http://${internalHost}:3001/v1/:path*`,
+          destination: `http://127.0.0.1:3001/v1/:path*`,
         },
       ];
     },
